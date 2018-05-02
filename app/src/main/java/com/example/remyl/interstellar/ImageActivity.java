@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ImageActivity extends AppCompatActivity {
@@ -112,9 +113,17 @@ public class ImageActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+            //mise en memoire du fragment (fragment_image)
             View rootView = inflater.inflate(R.layout.fragment_image, container, false);
+
+            //Recuperation du textview et de l'imageview du fragment
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            ImageView imageView = rootView.findViewById(R.id.constellation);
+
+            //MOdification du textview
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
+
             return rootView;
         }
     }
